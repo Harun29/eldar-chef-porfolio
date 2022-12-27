@@ -47,7 +47,12 @@ table {
 
 /* #DA291C */
 
+header {
+  position: relative;
+}
+
 nav{
+  position: fixed flex;
   background: transparent;
   padding: 15px;
   display: flex;
@@ -67,3 +72,39 @@ nav{
   align-items: center;
 }
 
+.menu-dropdown button{
+  background: inherit;
+  border: none;
+}
+
+/* DROPDOWN */
+
+.dropdown {
+  flex-direction: column;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navigation {
+  padding: 15px;
+}
+
+.navigation button{
+  background: inherit;
+  border: none;
+}
+
+.dropdown .navigation:nth-child(1){
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 1.5rem;
+}
+
+.dropdown .navigation:nth-child(2){
+  margin-top: 30px;
+}
