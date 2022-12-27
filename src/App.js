@@ -1,9 +1,11 @@
-import './App.css';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Navbar from "./components/Navbar";
+
 
 function App() {
   return (
     <div className="App">
-     
+      <Navbar/>
     </div>
   );
 }
