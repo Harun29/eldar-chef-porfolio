@@ -43,6 +43,10 @@ table {
 	border-spacing: 0;
 }
 
+svg{
+  color: black;
+}
+
 /* HEADER */
 
 /* #DA291C */
@@ -51,6 +55,7 @@ header {
   position: absolute;
   right: 0;
   left: 0;
+  top: 0;
 }
 
 nav{
@@ -58,7 +63,6 @@ nav{
   padding: 15px;
   display: flex;
   justify-content: space-between;
-  border-bottom: 1px solid black;
 }
 
 .name {
@@ -113,9 +117,19 @@ nav{
 /* FOOTER */
 
 footer{
+  color: white;
   display: flex;
   flex-direction: column;
   padding: 10px;
+  background-color: black;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+}
+
+footer svg{
+  color: white;
 }
 
 footer button{
@@ -150,6 +164,7 @@ footer .developer-info a{
 
 /* HOME */
 
-.welcome {
-  
+main .welcome {
+  padding-top: 70px;
 }
+
