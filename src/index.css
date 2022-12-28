@@ -108,3 +108,41 @@ nav{
 .dropdown .navigation:nth-child(2){
   margin-top: 30px;
 }
+
+/* FOOTER */
+
+footer{
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+
+footer button{
+  border: none;
+  background: none;
+}
+
+footer .user-info{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+  padding-bottom: 30px;
+  font-size: 24px;
+}
+
+footer h4{
+  padding-right: 10px;
+}
+
+footer .developer-info{
+  display: flex;
+  justify-content: start;
+  padding: 5px;
+  font-size: 16px;
+}
+
+footer .developer-info a{
+  text-decoration: none;
+  color: inherit;
+}
