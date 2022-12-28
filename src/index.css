@@ -48,11 +48,12 @@ table {
 /* #DA291C */
 
 header {
-  position: relative;
+  position: absolute;
+  right: 0;
+  left: 0;
 }
 
 nav{
-  position: fixed flex;
   background: transparent;
   padding: 15px;
   display: flex;
@@ -145,4 +146,10 @@ footer .developer-info{
 footer .developer-info a{
   text-decoration: none;
   color: inherit;
+}
+
+/* HOME */
+
+.welcome {
+  
 }
