@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import Navbar from "./Navbar";
 
 const Home = () => {
   return (  
@@ -16,7 +15,6 @@ const Home = () => {
           </div>
         </div>
       </div>
-
 
     </main>
   );
