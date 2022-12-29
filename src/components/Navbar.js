@@ -14,7 +14,7 @@ const Navbar = () => {
   <header>
     {!dropdown ? (<nav>
       <div className="name">
-        <h2>Eldar K.</h2>
+        <h2>Lorem I.</h2>
       </div>
 
       <div className="menu-dropdown">

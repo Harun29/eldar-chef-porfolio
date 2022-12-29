@@ -49,13 +49,19 @@ svg{
 
 /* HEADER */
 
-/* #DA291C */
+
 
 header {
+  color: white;
   position: absolute;
   right: 0;
   left: 0;
   top: 0;
+  z-index: 9999;
+}
+
+header svg{
+  color: white;
 }
 
 nav{
@@ -165,6 +171,58 @@ footer .developer-info a{
 /* HOME */
 
 main .welcome {
-  padding-top: 70px;
+  color: white;
+  background-image: url('https://media.istockphoto.com/id/1278745986/photo/culinary-background-with-traditional-ingredients-of-italian-cuisine.jpg?b=1&s=170667a&w=0&k=20&c=jct5dpWc9sFrs6g4_u9n1aV7IDBEJ5n3T9lF75sMft8=');
+  background-repeat: no-repeat;
+  background-position: bottom;
 }
 
+.welcome .intro{
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(1px);
+  padding: 60px 25px 25px 25px;
+  display: grid;
+}
+
+.intro .greeting{
+  display: flex;
+}
+
+.intro h1{
+  font-size: 30px;
+  padding: 5px 10px;
+  margin: 10px;
+  background-color: #DA291C;
+  border-radius: 2px;
+}
+
+.intro h2{
+  padding: 10px;
+}
+
+.intro h2 span{
+  color: #DA291C;
+}
+
+.intro p{
+  padding: 10px;
+}
+
+.first-button{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+
+.first-button button{
+  background-color: #DA291C;
+  border-radius: 2px;
+  border: none;
+  padding: 10px 25px;
+}
+
+.first-button button a{
+  text-decoration: none;
+  color: white;
+}
