@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Raleway:wght@100;300;400;500;700&family=Roboto:wght@100;300;500;700&display=swap');
+
 /* RESET CSS */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -49,8 +51,6 @@ svg{
 
 /* HEADER */
 
-
-
 header {
   color: white;
   position: absolute;
@@ -58,6 +58,12 @@ header {
   left: 0;
   top: 0;
   z-index: 9999;
+}
+
+header .name{
+  font-family: 'Lobster', cursive;
+  font-size: 25px;
+  padding-left: 30px;
 }
 
 header svg{
@@ -123,6 +129,8 @@ nav{
 /* FOOTER */
 
 footer{
+  font-family: 'Raleway', sans-serif;
+  font-weight: 300;
   color: white;
   display: flex;
   flex-direction: column;
@@ -171,6 +179,8 @@ footer .developer-info a{
 /* HOME */
 
 main .welcome {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 300;
   color: white;
   background-image: url('https://media.istockphoto.com/id/1278745986/photo/culinary-background-with-traditional-ingredients-of-italian-cuisine.jpg?b=1&s=170667a&w=0&k=20&c=jct5dpWc9sFrs6g4_u9n1aV7IDBEJ5n3T9lF75sMft8=');
   background-repeat: no-repeat;
@@ -180,12 +190,13 @@ main .welcome {
 .welcome .intro{
   background: rgba(0, 0, 0, 0.5);
   backdrop-filter: blur(1px);
-  padding: 60px 25px 25px 25px;
+  padding: 75px 25px 10px 25px;
   display: grid;
 }
 
 .intro .greeting{
   display: flex;
+  font-weight: 700;
 }
 
 .intro h1{
@@ -225,4 +236,6 @@ main .welcome {
 .first-button button a{
   text-decoration: none;
   color: white;
+  font-size: 15px;
+  font-weight: 500;
 }
