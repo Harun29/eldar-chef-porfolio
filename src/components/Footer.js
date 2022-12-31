@@ -6,7 +6,7 @@ const Footer = () => {
     <footer>
       <div className="user-info">
         <h4>Social:</h4>
-        
+
         <a href="https://www.instagram.com/eldo_pb/">
           <button>
             <FontAwesomeIcon icon={faInstagram} size='3x'></FontAwesomeIcon>
@@ -17,11 +17,10 @@ const Footer = () => {
             <FontAwesomeIcon icon={faFacebook} size='3x'></FontAwesomeIcon>
           </button>
         </a>
-        <a href="">
-          <button>
-            <FontAwesomeIcon icon={faLinkedin} size='3x'></FontAwesomeIcon>
-          </button>
-        </a>
+
+        <button>
+          <FontAwesomeIcon icon={faLinkedin} size='3x'></FontAwesomeIcon>
+        </button>
 
       </div>
       <div className="developer-info">
