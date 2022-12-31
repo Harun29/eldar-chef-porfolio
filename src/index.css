@@ -265,6 +265,11 @@ main .welcome {
   padding: 20px;
 }
 
+/* food and button */
+.align-button{
+  display: flex;
+  align-items: center;
+}
 
 .food-pictures{
   width: 80vw;
@@ -284,6 +289,15 @@ main .welcome {
   width: 100%;
   height: 100%;
 }
+
+.food-button{
+  border: none;
+  border-radius: 10px;
+  margin-left: 15px;
+  height: 100px;
+}
+
+/* recepies button */
 
 .recepies-button{
   display: flex;
