@@ -104,10 +104,15 @@ nav{
   left: 0;
   justify-content: space-between;
   align-items: center;
+  background: white;
 }
 
 .navigation {
   padding: 15px;
+}
+
+.navigation svg {
+  color: black;
 }
 
 .navigation button{
