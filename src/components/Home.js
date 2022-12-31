@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import Food from "./Food";
 
 const Home = () => {
   return (  
@@ -15,6 +16,7 @@ const Home = () => {
           </div>
         </div>
       </div>
+      <Food />
 
     </main>
   );

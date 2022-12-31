@@ -239,3 +239,69 @@ main .welcome {
   font-size: 15px;
   font-weight: 500;
 }
+
+/* FOOD SECTION */
+
+.food-section{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+.header-2{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header-2{
+  font-family: 'Raleway', sans-serif;
+  padding: 20px;
+}
+
+
+.food-pictures{
+  width: 80vw;
+  height: 100%;
+  display: flex;
+  left: 0;
+  overflow: scroll;
+}
+
+.food{
+  width: 9rem;
+  height: 9rem;
+  padding: 0.5rem;
+}
+
+.food img{
+  width: 100%;
+  height: 100%;
+}
+
+.recepies-button{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+
+.recepies-button button{
+  background-color: #DA291C;
+  border-radius: 2px;
+  border: none;
+  padding: 10px 25px;
+}
+
+.recepies-button button a{
+  text-decoration: none;
+  color: white;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+
+
+
+
