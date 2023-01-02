@@ -2,7 +2,7 @@ import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { faArrowUp } from "@fortawesome/free-solid-svg-icons";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 
 const Navbar = () => {
   const [dropdown, setDropdown] = useState(false);
@@ -13,8 +13,13 @@ const Navbar = () => {
 
   return ( 
   <header>
+
+    <AnimatePresence>
     {!dropdown ? (
-    <nav>
+    <motion.nav
+      initial={{opacity: 1}}
+      animate={{opaciti: 0}}
+      exit={{opacity: 1}}>
       <div className="name">
         <h2>Lorem I.</h2>
       </div>
@@ -22,13 +27,17 @@ const Navbar = () => {
       <div className="menu-dropdown">
         <button onClick={handleDropdown}><FontAwesomeIcon icon={faBars} size="xl" /></button>
       </div> 
-    </nav>) : null}
+    </motion.nav>) : null}
+    </AnimatePresence>
 
+    <AnimatePresence>
     {dropdown ? (
       <motion.nav 
         className="dropdown"
         animate={{y: 0}}
-        initial={{y: -500}}>
+        initial={{y: -250}}
+        transition={{type: "tween"}}
+        exit={{y: -250}}>
         <div className="navigation">
           <button onClick={handleDropdown}>
             <FontAwesomeIcon icon={faArrowUp}></FontAwesomeIcon>
@@ -52,6 +61,7 @@ const Navbar = () => {
         </div>
       </motion.nav>
     ) : null}
+    </AnimatePresence>
   </header>
   );
 }
