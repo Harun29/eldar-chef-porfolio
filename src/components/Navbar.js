@@ -2,6 +2,7 @@ import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { faArrowUp } from "@fortawesome/free-solid-svg-icons";
+import { motion } from "framer-motion";
 
 const Navbar = () => {
   const [dropdown, setDropdown] = useState(false);
@@ -12,7 +13,8 @@ const Navbar = () => {
 
   return ( 
   <header>
-    {!dropdown ? (<nav>
+    {!dropdown ? (
+    <nav>
       <div className="name">
         <h2>Lorem I.</h2>
       </div>
@@ -23,7 +25,10 @@ const Navbar = () => {
     </nav>) : null}
 
     {dropdown ? (
-      <nav className="dropdown">
+      <motion.nav 
+        className="dropdown"
+        animate={{y: 0}}
+        initial={{y: -500}}>
         <div className="navigation">
           <button onClick={handleDropdown}>
             <FontAwesomeIcon icon={faArrowUp}></FontAwesomeIcon>
@@ -45,7 +50,7 @@ const Navbar = () => {
         <div className="navigation">
           <button>Recepies</button>
         </div>
-      </nav>
+      </motion.nav>
     ) : null}
   </header>
   );
