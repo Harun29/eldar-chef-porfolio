@@ -9,17 +9,17 @@ const Footer = () => {
 
         <a href="https://www.instagram.com/eldo_pb/">
           <button>
-            <FontAwesomeIcon icon={faInstagram} size='3x'></FontAwesomeIcon>
+            <FontAwesomeIcon icon={faInstagram} size='2x'></FontAwesomeIcon>
           </button>
         </a>
         <a href="https://www.facebook.com/eldar.karahmetovic">
           <button>
-            <FontAwesomeIcon icon={faFacebook} size='3x'></FontAwesomeIcon>
+            <FontAwesomeIcon icon={faFacebook} size='2x'></FontAwesomeIcon>
           </button>
         </a>
 
         <button>
-          <FontAwesomeIcon icon={faLinkedin} size='3x'></FontAwesomeIcon>
+          <FontAwesomeIcon icon={faLinkedin} size='2x'></FontAwesomeIcon>
         </button>
 
       </div>
