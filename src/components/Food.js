@@ -1,17 +1,28 @@
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
-import { useRef } from "react";
+import { faArrowRight, faArrowLeft } from "@fortawesome/free-solid-svg-icons";
+import { useEffect, useRef, useState } from "react";
+import { motion } from "framer-motion";
+import { useOnScreen } from "../hooks/OnScreen";
 
 const Food = () => {
   
+  const previousPage = useRef();
+  const previousIsOnScreen = useOnScreen(previousPage);
+
   const currentPage = useRef();
   const nextPage = useRef();
+  const [backButton, setBackButton] = useState(false);
   
   const handleClick = () => {
     currentPage.current?.scrollIntoView({behaviour: 'smooth'});
-    currentPage.current = nextPage.current;
   }
+
+  useEffect(() => {
+    if (previousIsOnScreen){
+      setBackButton(false);
+    }
+  }, [])
 
   return (  
     <div className="food-section">
@@ -20,9 +31,15 @@ const Food = () => {
             <h1>My recepies</h1>
           </div>
           <div className="align-button">
+            {backButton ? (
+              <button className="food-button">
+                <FontAwesomeIcon icon={faArrowLeft}></FontAwesomeIcon>
+              </button>
+            ): null}
+
             <div className="food-pictures">
                 <Link to="/">
-                  <div className="food">
+                  <div className="food" ref={previousPage}>
                       <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7g2INAXqxmY-PUEwX9B9r-kEt44N0z0VzLh6g-GYDPg&s" alt="" />
                   </div>
                 </Link>
@@ -50,6 +67,7 @@ const Food = () => {
                   </div>
                 </Link>
             </div>
+
             <button onClick={handleClick} className="food-button">
                 <FontAwesomeIcon icon={faArrowRight}></FontAwesomeIcon>
             </button>

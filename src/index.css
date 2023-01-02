@@ -105,6 +105,7 @@ nav{
   justify-content: space-between;
   align-items: center;
   background: white;
+
 }
 
 .navigation {
@@ -162,7 +163,7 @@ footer .user-info{
   justify-content: center;
   padding: 5px;
   padding-bottom: 30px;
-  font-size: 24px;
+  font-size: 22px;
 }
 
 footer h4{
@@ -173,7 +174,7 @@ footer .developer-info{
   display: flex;
   justify-content: flex-start;
   padding: 5px;
-  font-size: 16px;
+  font-size: 14px;
 }
 
 footer .developer-info a{
@@ -269,6 +270,7 @@ main .welcome {
 .align-button{
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 
 .food-pictures{
@@ -293,8 +295,8 @@ main .welcome {
 .food-button{
   border: none;
   border-radius: 10px;
-  margin-left: 15px;
   height: 100px;
+  margin: 0 5px;
 }
 
 /* recepies button */
