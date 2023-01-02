@@ -141,7 +141,7 @@ footer{
   display: flex;
   flex-direction: column;
   padding: 10px;
-  background-color: black;
+  background: linear-gradient(135.8deg, rgb(26, 26, 29) 27.1%, rgb(111, 34, 50) 77.5%);
   position: absolute;
   bottom: 0;
   right: 0;
