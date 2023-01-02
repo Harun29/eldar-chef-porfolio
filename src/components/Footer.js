@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faFacebook, faInstagram, faLinkedin } from "@fortawesome/free-brands-svg-icons";
+import { faFacebook, faInstagram, faLinkedin, faGithub } from "@fortawesome/free-brands-svg-icons";
 
 const Footer = () => {
   return ( 
@@ -25,6 +25,7 @@ const Footer = () => {
       </div>
       <div className="developer-info">
         <p>Web developer's github: <a href="https://github.com/Harun29">Harun29</a></p>
+        <FontAwesomeIcon icon={faGithub} size='lg' />
       </div>
     </footer>
   );
