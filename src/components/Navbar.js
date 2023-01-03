@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { faArrowUp } from "@fortawesome/free-solid-svg-icons";
@@ -23,12 +23,7 @@ const Navbar = () => {
   window.addEventListener('scroll', changeBackground)
 
   return ( 
-  <AnimatePresence>
-  <motion.header 
-    className={navbar ? 'navbar active' : 'navbar'}
-    initial={navbar ? {opacity: 0} : {opacity: 0}}
-    animate={navbar ? {opacity: 1} : {opacity: 1}}
-    exit={navbar ? {opacity: 0} : {opacity: 0}}>
+  <header className={navbar ? 'navbar active' : 'navbar'}>
 
     <AnimatePresence>
     {!dropdown ? (
@@ -50,8 +45,8 @@ const Navbar = () => {
     {dropdown ? (
       <motion.nav 
         className="dropdown"
-        animate={{y: 0}}
         initial={{y: -250}}
+        animate={{y: 0}}
         transition={{type: "tween"}}
         exit={{y: -250}}>
         <div className="navigation">
@@ -78,8 +73,7 @@ const Navbar = () => {
       </motion.nav>
     ) : null}
     </AnimatePresence>
-  </motion.header>
-  </AnimatePresence>
+  </header>
   );
 }
  

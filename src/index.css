@@ -58,12 +58,12 @@ header {
   left: 0;
   top: 0;
   z-index: 9999;
+  transition: all 200ms;
 }
 
 .navbar.active, .navbar.active svg {
   color: black;
   background-color: white;
-  animation: forwards;
 }
 
 header .name{
