@@ -1,17 +1,10 @@
 import { Link } from "react-router-dom";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { useRef } from "react";
 
 const Food = () => {
   
   const currentPage = useRef();
   const nextPage = useRef();
-  
-  const handleClick = () => {
-    currentPage.current?.scrollIntoView({behaviour: 'smooth'});
-    currentPage.current = nextPage.current;
-  }
 
   return (  
     <div className="food-section">
@@ -19,6 +12,7 @@ const Food = () => {
           <div className="header-2">
             <h1>My recepies</h1>
           </div>
+
             <div className="food-pictures">
                 <Link to="/">
                   <div className="food">
