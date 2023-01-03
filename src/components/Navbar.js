@@ -6,13 +6,29 @@ import { motion, AnimatePresence } from "framer-motion";
 
 const Navbar = () => {
   const [dropdown, setDropdown] = useState(false);
+  const [navbar, setNavbar] = useState(false);
 
   const handleDropdown = () => {
     setDropdown(!dropdown);
   };
 
+  const changeBackground = () => {
+    if (window.scrollY >= 35){
+      setNavbar(true);
+    } else{
+      setNavbar(false);
+    }
+  }
+
+  window.addEventListener('scroll', changeBackground)
+
   return ( 
-  <header>
+  <AnimatePresence>
+  <motion.header 
+    className={navbar ? 'navbar active' : 'navbar'}
+    initial={navbar ? {opacity: 0} : {opacity: 0}}
+    animate={navbar ? {opacity: 1} : {opacity: 1}}
+    exit={navbar ? {opacity: 0} : {opacity: 0}}>
 
     <AnimatePresence>
     {!dropdown ? (
@@ -62,7 +78,8 @@ const Navbar = () => {
       </motion.nav>
     ) : null}
     </AnimatePresence>
-  </header>
+  </motion.header>
+  </AnimatePresence>
   );
 }
  
