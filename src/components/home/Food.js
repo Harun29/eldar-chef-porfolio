@@ -19,7 +19,6 @@ const Food = () => {
           <div className="header-2">
             <h1>My recepies</h1>
           </div>
-          <div className="align-button">
             <div className="food-pictures">
                 <Link to="/">
                   <div className="food">
@@ -50,10 +49,6 @@ const Food = () => {
                   </div>
                 </Link>
             </div>
-            <button onClick={handleClick} className="food-button">
-                <FontAwesomeIcon icon={faArrowRight}></FontAwesomeIcon>
-            </button>
-          </div>
 
           <div className="recepies-button">
             <button><Link to="/">Get my recepies</Link></button>
