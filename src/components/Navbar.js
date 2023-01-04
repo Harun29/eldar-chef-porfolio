@@ -11,12 +11,16 @@ const Navbar = () => {
 
   const [isHome, setIsHome] = useState(true);
 
-  const handleLocationChange = () => {
-    const location = useLocation().pathname
-    if (location !== '/'){
+  const HandleLocationChange = () => {
+    const location = useLocation();
+    if (location.pathname !== '/'){
       setIsHome(false)
+      console.log(isHome);
+      console.log(location.pathname);
+    } else {
+      setIsHome(true)
     }
-  }
+  };
 
   const handleDropdown = () => {
     setDropdown(!dropdown);
@@ -28,13 +32,13 @@ const Navbar = () => {
     } else{
       setIsScrolled(false);
     }
-  }
+  };
 
   window.addEventListener('scroll', changeBackground)
-  window.addEventListener('click', handleLocationChange)
+  window.addEventListener('click', HandleLocationChange)
 
   return ( 
-  <header className={isScrolled ? 'navbar active' : 'navbar'}>
+  <header className={`navbar${isHome ? `${isScrolled ? 'active' : ''}` : 'black'}`}>
 
     <AnimatePresence>
     {!dropdown ? (
