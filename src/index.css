@@ -248,7 +248,7 @@ main .welcome {
   padding: 10px 25px;
 }
 
-.first-button button a{
+.first-button a button{
   text-decoration: none;
   color: white;
   font-size: 15px;
@@ -391,4 +391,19 @@ main .welcome {
 }
 .lessons button:nth-child(3){
   background: #FF0000;
+}
+
+
+/* ABOUT ME */
+
+.profile-picture{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  object-fit: cover;
+  margin-top: 80px;
+}
+
+.profile-picture img{
+  width: 400px;
 }
