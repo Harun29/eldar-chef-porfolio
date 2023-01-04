@@ -3,10 +3,20 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { faArrowUp } from "@fortawesome/free-solid-svg-icons";
 import { motion, AnimatePresence } from "framer-motion";
+import { useLocation } from "react-router-dom";
 
 const Navbar = () => {
   const [dropdown, setDropdown] = useState(false);
-  const [navbar, setNavbar] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  const [isHome, setIsHome] = useState(true);
+
+  const handleLocationChange = () => {
+    const location = useLocation().pathname
+    if (location !== '/'){
+      setIsHome(false)
+    }
+  }
 
   const handleDropdown = () => {
     setDropdown(!dropdown);
@@ -14,16 +24,17 @@ const Navbar = () => {
 
   const changeBackground = () => {
     if (window.scrollY >= 35){
-      setNavbar(true);
+      setIsScrolled(true);
     } else{
-      setNavbar(false);
+      setIsScrolled(false);
     }
   }
 
   window.addEventListener('scroll', changeBackground)
+  window.addEventListener('click', handleLocationChange)
 
   return ( 
-  <header className={navbar ? 'navbar active' : 'navbar'}>
+  <header className={isScrolled ? 'navbar active' : 'navbar'}>
 
     <AnimatePresence>
     {!dropdown ? (
