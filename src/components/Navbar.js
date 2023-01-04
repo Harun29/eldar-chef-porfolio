@@ -21,7 +21,7 @@ const Navbar = () => {
     }
   };
 
-  window.addEventListener('scroll', changeBackground)
+  window.addEventListener('scroll', changeBackground);
 
   return ( 
   <header className={isScrolled ? 'navbar active' : 'navbar'}>

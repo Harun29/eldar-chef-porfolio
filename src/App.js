@@ -11,6 +11,7 @@ function App() {
         <Navbar />
           <div className="content">
             <Switch>
+              {/* just delete "/" from path, idk why but just do it and try to find another way around it */}
               <Route exat path={["/", "/components/Home"]} component={Home} />
               <Route exat path="/pages/About" component={About} />
             </Switch>
