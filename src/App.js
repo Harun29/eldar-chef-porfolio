@@ -11,12 +11,8 @@ function App() {
         <Navbar />
           <div className="content">
             <Switch>
-              <Route exact path="/">
-                <Home />
-              </Route>
-              <Route parh="/About">
-                <About />
-              </Route>
+              <Route exat path={["/", "/components/Home"]} component={Home} />
+              <Route exat path="/pages/About" component={About} />
             </Switch>
           </div>
         <Footer />
