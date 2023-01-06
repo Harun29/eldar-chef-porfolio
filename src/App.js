@@ -3,16 +3,25 @@ import Navbar from "./components/Navbar";
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Home from "./components/Home";
 import About from "./pages/About";
+import { useState } from "react";
 
 function App() {
+
+  const [background, setBackground] = useState(false);
+
   return (
     <Router>
       <div className="App">
-        <Navbar />
+        <Navbar background={background} />
           <div className="content">
             <Switch>
-              <Route exact path={["/", "/components/Home"]} component={Home} />
-              <Route exact path="/pages/About" component={About} />
+              <Route exact path={["/", "/components/Home"]}>
+                <Home />
+              </Route>
+              <Route exact path="/pages/About">
+                {setBackground(true)}
+                <About />
+              </Route>
             </Switch>
           </div>
         <Footer />

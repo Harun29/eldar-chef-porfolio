@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
-import Food from "./Home/home/Food";
-import Lessons from "./home/Lessons";
+import Food from "./Home/Food";
+import Lessons from "./Home/Lessons";
 
 const Home = () => {
   return (  

@@ -4,6 +4,10 @@ import { faFacebook, faInstagram, faLinkedin, faGithub } from "@fortawesome/free
 const Footer = () => {
   return ( 
     <footer>
+      <div className="contact">
+        <p>Phone number: +38761061061</p>
+        <p>Email: eldarkarahmetovic@gmail.com</p>
+      </div>
       <div className="user-info">
         <h4>Social:</h4>
 

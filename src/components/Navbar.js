@@ -5,7 +5,8 @@ import { faArrowUp } from "@fortawesome/free-solid-svg-icons";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "react-router-dom";
 
-const Navbar = () => {
+const Navbar = (props) => {
+  const backgound = props.background;
   const [dropdown, setDropdown] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
@@ -64,9 +65,13 @@ const Navbar = () => {
           <button>Contact</button>
         </div>
 
+        
         <div className="navigation">
-          <button>About me</button>
+          <Link to="../pages/About">
+            <button>About me</button>
+          </Link>
         </div>
+        
 
         <div className="navigation">
           <button>Recepies</button>
