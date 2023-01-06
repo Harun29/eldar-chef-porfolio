@@ -7,19 +7,16 @@ import { useState } from "react";
 
 function App() {
 
-  const [background, setBackground] = useState(false);
-
   return (
     <Router>
       <div className="App">
-        <Navbar background={background} />
+        <Navbar />
           <div className="content">
             <Switch>
               <Route exact path={["/", "/components/Home"]}>
                 <Home />
               </Route>
               <Route exact path="/pages/About">
-                {setBackground(true)}
                 <About />
               </Route>
             </Switch>

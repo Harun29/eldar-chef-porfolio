@@ -4,11 +4,13 @@ import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { faArrowUp } from "@fortawesome/free-solid-svg-icons";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 
-const Navbar = (props) => {
-  const backgound = props.background;
+const Navbar = () => {
   const [dropdown, setDropdown] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+
+  const { pathname } = useLocation();
 
   const handleDropdown = () => {
     setDropdown(!dropdown);
@@ -25,7 +27,7 @@ const Navbar = (props) => {
   window.addEventListener('scroll', changeBackground);
 
   return ( 
-  <header className={isScrolled ? 'navbar active' : 'navbar'}>
+  <header className={`${isScrolled ? 'navbar active' : 'navbar'}${pathname === '/components/Home' ? '' : ' not-home'}`}>
 
     <AnimatePresence>
     {!dropdown ? (
@@ -58,23 +60,23 @@ const Navbar = (props) => {
         </div>
 
         <div className="navigation">
-          <Link to="../components/Home"><button>Home</button></Link>
-        </div>
-
-        <div className="navigation">
-          <button>Contact</button>
-        </div>
-
-        
-        <div className="navigation">
-          <Link to="../pages/About">
-            <button>About me</button>
+          <Link to="../components/Home">
+            <button onClick={handleDropdown}>Home</button>
           </Link>
         </div>
         
-
+        <div className="navigation">
+          <Link to="../pages/About">
+            <button onClick={handleDropdown}>About me</button>
+          </Link>
+        </div>
+        
         <div className="navigation">
           <button>Recepies</button>
+        </div>
+
+        <div className="navigation">
+          <button>Cooking lessons</button>
         </div>
       </motion.nav>
     ) : null}

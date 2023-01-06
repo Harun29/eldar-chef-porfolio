@@ -66,6 +66,14 @@ header {
   background-color: white;
 }
 
+.navbar.not-home, .navbar.not-home svg{
+  color: black;
+}
+
+.navbar.not-home{
+  background-color: white;
+}
+
 header .name{
   font-family: 'Lobster', cursive;
   font-size: 25px;
@@ -257,6 +265,7 @@ main .welcome {
   border-radius: 2px;
   border: none;
   padding: 10px 25px;
+  color: white;
 }
 
 .first-button a button{
@@ -413,8 +422,20 @@ main .welcome {
   justify-content: center;
   object-fit: cover;
   margin-top: 80px;
+  margin-bottom: 50px;
 }
 
 .profile-picture img{
-  width: 400px;
+  width: 150px;
+  padding: 10px;
+  border: 1px solid black;
+}
+
+.about-me{
+  font-family: 'Raleway', sans-serif;
+  padding: 0 40px;
+}
+
+.about .first-button{
+  margin: 20px;
 }
