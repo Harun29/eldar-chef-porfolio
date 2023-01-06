@@ -1,17 +1,8 @@
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
-import { useRef } from "react";
 
 const Food = () => {
-  
-  const currentPage = useRef();
-  const nextPage = useRef();
-  
-  const handleClick = () => {
-    currentPage.current?.scrollIntoView({behaviour: 'smooth'});
-    currentPage.current = nextPage.current;
-  }
 
   return (  
     <div className="food-section">
@@ -38,19 +29,19 @@ const Food = () => {
                   </div>
                 </Link>
 
-                <Link to="/" ref={currentPage}>
+                <Link to="/">
                   <div className="food">
                     <img src="https://asterseniorcommunities.com/wp-content/uploads/2017/03/plate-food.jpg" alt="" />
                   </div>
                 </Link>
               
-                <Link to="/" ref={nextPage}>
+                <Link to="/">
                   <div className="food">
                     <img src="https://media.istockphoto.com/id/913034864/photo/fish-dish-grilled-salmon-and-asparagus.jpg?s=170667a&w=is&k=20&c=CoGDpqVakHx9gEfaJhSHkZi0v9ljD6ZQoOaSGslooY0=" alt="" />
                   </div>
                 </Link>
             </div>
-            <button onClick={handleClick} className="food-button">
+            <button className="food-button">
                 <FontAwesomeIcon icon={faArrowRight}></FontAwesomeIcon>
             </button>
           </div>

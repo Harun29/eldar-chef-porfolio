@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import Food from "./Food";
+import Food from "./Home/Food";
 
 const Home = () => {
   return (  
