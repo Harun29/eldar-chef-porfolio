@@ -53,11 +53,17 @@ svg{
 
 header {
   color: white;
-  position: absolute;
+  position: fixed;
   right: 0;
   left: 0;
   top: 0;
   z-index: 9999;
+  transition: all 200ms;
+}
+
+.navbar.active, .navbar.active svg {
+  color: black;
+  background-color: white;
 }
 
 header .name{
@@ -105,6 +111,7 @@ nav{
   justify-content: space-between;
   align-items: center;
   background: white;
+
 }
 
 .navigation {
@@ -140,11 +147,7 @@ footer{
   display: flex;
   flex-direction: column;
   padding: 10px;
-  background-color: black;
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  left: 0;
+  background: linear-gradient(135.8deg, rgb(26, 26, 29) 27.1%, #5c110c 77.5%);
 }
 
 footer svg{
@@ -162,7 +165,7 @@ footer .user-info{
   justify-content: center;
   padding: 5px;
   padding-bottom: 30px;
-  font-size: 24px;
+  font-size: 22px;
 }
 
 footer h4{
@@ -172,14 +175,21 @@ footer h4{
 footer .developer-info{
   display: flex;
   justify-content: flex-start;
-  padding: 5px;
-  font-size: 16px;
+  padding: 5px 5px 0px 5px;
+  font-size: 14px;
+  align-items: center;
 }
 
 footer .developer-info a{
   text-decoration: none;
   color: inherit;
 }
+
+footer .developer-info svg{
+  padding: 5px;
+
+}
+
 
 /* HOME */
 
@@ -238,7 +248,7 @@ main .welcome {
   padding: 10px 25px;
 }
 
-.first-button button a{
+.first-button a button{
   text-decoration: none;
   color: white;
   font-size: 15px;
@@ -269,6 +279,7 @@ main .welcome {
 .align-button{
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 
 .food-pictures{
@@ -293,8 +304,8 @@ main .welcome {
 .food-button{
   border: none;
   border-radius: 10px;
-  margin-left: 15px;
   height: 100px;
+  margin: 0 5px;
 }
 
 /* recepies button */
@@ -321,6 +332,78 @@ main .welcome {
 }
 
 
+/* COURSES SECTION */
+
+.lessons {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Raleway', sans-serif;
+  margin-top: 20px;
+  color: white;
+  background-image: url('https://media.istockphoto.com/id/1169326482/video/chef-cooking-in-restaurant-kitchen-blurred-defocused-background.jpg?s=640x640&k=20&c=zHCvhmcllwprGxEN44M9u0ZrtUl91Q-5aty6llxwtX8=');
+  background-size: cover;
+}
+
+.lessons h4{
+  margin-top: 30px;
+  padding: 10px;
+  border-bottom: 1px solid white;
+  font-size: 22px;
+}
+
+.lessons iframe{
+  margin: 25px 25px 15px 25px;
+  width: 80%;
+  height: 185px;
+  border-radius: 20px;
+  border: 1px solid white;
+}
+
+.lessons .buttons{
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+
+.lessons button{
+  background-color: #DA291C;
+  border-radius: 3px;
+  border: none;
+  padding: 5px 15px;
+  margin: 6px;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 500;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+.lessons svg{
+  padding: 5px 8px;
+  color: white;
+}
+
+.lessons button:nth-child(2){
+  background: #7289da;
+}
+.lessons button:nth-child(3){
+  background: #FF0000;
+}
 
 
+/* ABOUT ME */
 
+.profile-picture{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  object-fit: cover;
+  margin-top: 80px;
+}
+
+.profile-picture img{
+  width: 400px;
+}
