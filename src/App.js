@@ -3,7 +3,6 @@ import Navbar from "./components/Navbar";
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Home from "./components/Home";
 import About from "./pages/About";
-import { useState } from "react";
 
 function App() {
 
