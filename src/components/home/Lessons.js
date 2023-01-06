@@ -4,7 +4,6 @@ import { faRightToBracket } from "@fortawesome/free-solid-svg-icons";
 
 const Lessons = () => {
   return (  
-    
     <main className="lessons">
       <h4>Let me be your coach!</h4>
       <iframe width="560" height="315" src="https://www.youtube.com/embed/FTociictyyE" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
