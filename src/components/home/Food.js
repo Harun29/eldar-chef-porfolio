@@ -1,11 +1,9 @@
 import { Link } from "react-router-dom";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 
 const Food = () => {
 
   return (  
-    <div className="food-section">
+      <div className="food-section">
         <div className="background-2">
           <div className="header-2">
             <h1>My recepies</h1>
