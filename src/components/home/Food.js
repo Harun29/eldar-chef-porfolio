@@ -40,7 +40,9 @@ const Food = () => {
             </div>
 
           <div className="recepies-button">
-            <button><Link to="/">Get my recepies</Link></button>
+            <button>
+              <Link to="/">Get my recepies</Link>
+            </button>
           </div>
         </div>
       </div>
