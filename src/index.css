@@ -51,14 +51,18 @@ svg{
 
 /* HEADER */
 
-header {
+.navbar {
   color: white;
   position: fixed;
   right: 0;
   left: 0;
   top: 0;
   z-index: 9999;
-  transition: all 200ms;
+  transition: all 100ms;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
 }
 
 .navbar.active, .navbar.active svg {
@@ -74,13 +78,13 @@ header {
   background-color: white;
 }
 
-header .name{
+.navbar .name{
   font-family: 'Lobster', cursive;
   font-size: 25px;
-  padding-left: 30px;
+  padding: 3px 6px;
 }
 
-header svg{
+.navbar svg{
   color: white;
 }
 
@@ -113,7 +117,7 @@ nav{
 .dropdown {
   flex-direction: column;
   position: absolute;
-  top: 0;
+  top: 60px;
   right: 0;
   left: 0;
   justify-content: space-between;
@@ -133,18 +137,9 @@ nav{
 .navigation button{
   background: inherit;
   border: none;
+  padding: 0.1rem;
 }
 
-.dropdown .navigation:nth-child(1){
-  position: absolute;
-  right: 0;
-  top: 0;
-  padding: 1.5rem;
-}
-
-.dropdown .navigation:nth-child(2){
-  margin-top: 30px;
-}
 
 /* FOOTER */
 

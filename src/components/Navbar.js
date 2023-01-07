@@ -9,11 +9,13 @@ import { useLocation } from "react-router-dom";
 const Navbar = () => {
   const [dropdown, setDropdown] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [icon, setIcon] = useState(true);
 
   const { pathname } = useLocation();
 
   const handleDropdown = () => {
     setDropdown(!dropdown);
+    setIcon(!icon)
   };
 
   const changeBackground = () => {
@@ -27,38 +29,27 @@ const Navbar = () => {
   window.addEventListener('scroll', changeBackground);
 
   return ( 
-  <header className={`${isScrolled ? 'navbar active' : 'navbar'}${pathname === '/components/Home' ? '' : ' not-home'}`}>
-
-    <AnimatePresence>
-    {!dropdown ? (
-    <motion.nav
-      initial={{opacity: 1}}
-      animate={{opaciti: 0}}
-      exit={{opacity: 1}}>
+  <header className={`${isScrolled||dropdown ? 'navbar active' : 'navbar'}${pathname === '/pages/About' ? ' not-home' : ''}`}>
       <div className="name">
         <h2>Lorem I.</h2>
       </div>
 
       <div className="menu-dropdown">
-        <button onClick={handleDropdown}><FontAwesomeIcon icon={faBars} size="xl" /></button>
-      </div> 
-    </motion.nav>) : null}
-    </AnimatePresence>
+        <button onClick={handleDropdown}>
+          {icon ? (<FontAwesomeIcon icon={faBars} size="xl" />)
+          : (<FontAwesomeIcon icon={faArrowUp} size="xl" />)}
+        </button>
+      </div>
 
     <AnimatePresence>
     {dropdown ? (
       <motion.nav 
         className="dropdown"
-        initial={{y: -250}}
-        animate={{y: 0}}
-        transition={{type: "tween"}}
-        exit={{y: -250}}>
-        <div className="navigation">
-          <button onClick={handleDropdown}>
-            <FontAwesomeIcon icon={faArrowUp}></FontAwesomeIcon>
-          </button>
-        </div>
-
+        initial={{y: -15, opacity: 0}}
+        animate={{y: 0, opacity: 1}}
+        // exit={{y: -15}}
+        transition={{type: "tween", delay: 0.01}}>
+  
         <div className="navigation">
           <Link to="../components/Home">
             <button onClick={handleDropdown}>Home</button>
