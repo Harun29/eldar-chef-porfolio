@@ -9,13 +9,11 @@ import { useLocation } from "react-router-dom";
 const Navbar = () => {
   const [dropdown, setDropdown] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const [icon, setIcon] = useState(true);
 
   const { pathname } = useLocation();
 
   const handleDropdown = () => {
     setDropdown(!dropdown);
-    setIcon(!icon)
   };
 
   const changeBackground = () => {
@@ -36,8 +34,23 @@ const Navbar = () => {
 
       <div className="menu-dropdown">
         <button onClick={handleDropdown}>
-          {icon ? (<FontAwesomeIcon icon={faBars} size="xl" />)
-          : (<FontAwesomeIcon icon={faArrowUp} size="xl" />)}
+          {!dropdown ? (
+          
+          <AnimatePresence>
+            <motion.div
+              animate={{rotate: dropdown ? 360 : 0}}>
+              <FontAwesomeIcon icon={faBars} size="xl" />
+            </motion.div>
+          </AnimatePresence>
+          )
+          : (
+          <AnimatePresence>
+            <motion.div
+              animate={{rotate: dropdown ? 360 : 0}}>
+              <FontAwesomeIcon icon={faArrowUp} size="xl" />
+            </motion.div>
+          </AnimatePresence>
+          )}
         </button>
       </div>
 
@@ -47,8 +60,7 @@ const Navbar = () => {
         className="dropdown"
         initial={{y: -15, opacity: 0}}
         animate={{y: 0, opacity: 1}}
-        // exit={{y: -15}}
-        transition={{type: "tween", delay: 0.01}}>
+        transition={{type: "tween", delay: 0.2}}>
   
         <div className="navigation">
           <Link to="../components/Home">
