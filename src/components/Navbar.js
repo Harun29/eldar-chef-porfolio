@@ -9,7 +9,6 @@ import { useLocation } from "react-router-dom";
 const Navbar = () => {
   const [dropdown, setDropdown] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-
   const { pathname } = useLocation();
 
   const handleDropdown = () => {
