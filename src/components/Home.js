@@ -10,7 +10,7 @@ const Home = () => {
       <motion.div className="welcome"
       initial={{y:-10, opacity: 0}}
       animate={{y: 0, opacity: 1}}
-      transition={{type: 'tween', duration: 0.5, ease: 'easeInOut'}}>
+      transition={{type: 'tween', duration: 0.5, ease: 'easeOut'}}>
         <div className="intro">
           <div className="greeting">
             <h1>Hello,</h1>
