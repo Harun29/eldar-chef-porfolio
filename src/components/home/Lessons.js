@@ -1,10 +1,15 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faYoutube, faDiscord } from "@fortawesome/free-brands-svg-icons";
 import { faRightToBracket } from "@fortawesome/free-solid-svg-icons";
+import { motion, AnimatePresence } from "framer-motion";
 
 const Lessons = () => {
   return (  
-    <main className="lessons">
+    <AnimatePresence>
+    <motion.main className="lessons"
+    initial={{y: -10, opacity: 0}}
+    animate={{y: 0, opacity: 1}}
+    transition={{type: 'tween', duration: 0.2, delay: 0.4}}>
       <h4>Let me be your coach!</h4>
       <iframe width="560" height="315" src="https://www.youtube.com/embed/FTociictyyE" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
       <div className="buttons">
@@ -12,7 +17,8 @@ const Lessons = () => {
         <button><FontAwesomeIcon icon={faDiscord} size='xl' />Join my discord</button>
         <button><FontAwesomeIcon icon={faYoutube} size='xl' />Visit my youtube</button>
       </div>
-    </main>
+    </motion.main>
+    </AnimatePresence>
   );
 }
  
