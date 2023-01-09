@@ -9,7 +9,7 @@ const Lessons = () => {
     <motion.main className="lessons"
     initial={{y: -10, opacity: 0}}
     animate={{y: 0, opacity: 1}}
-    transition={{type: 'tween', duration: 0.2, delay: 0.4}}>
+    transition={{type: 'tween', duration: 0.5, delay: 0.2, ease: 'easeOut'}}>
       <h4>Let me be your coach!</h4>
       <iframe width="560" height="315" src="https://www.youtube.com/embed/FTociictyyE" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
       <div className="buttons">

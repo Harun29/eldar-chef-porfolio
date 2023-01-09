@@ -6,9 +6,9 @@ const Footer = () => {
   return ( 
     <AnimatePresence>
     <motion.footer
-    initial={{y: -10, opacity: 0}}
+    initial={{y: -10,opacity: 0}}
     animate={{y: 0, opacity: 1}}
-    transition={{type: 'tween', duration: 0.2, delay: 0.8}}>
+    transition={{type: 'tween', duration: 0.3, delay: 0.4, ease: 'easeOut'}}>
       <div className="contact">
         <p>Phone number: +38761061061</p>
         <p>Email: eldarkarahmetovic@gmail.com</p>

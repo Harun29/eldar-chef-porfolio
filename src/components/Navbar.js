@@ -29,8 +29,9 @@ const Navbar = () => {
   <AnimatePresence> 
   <motion.header 
   className={`${isScrolled||dropdown ? 'navbar active' : 'navbar'}${pathname === '/pages/About' ? ' not-home' : ''}`}
-  inital={{y: -15, opacity: 0}}
-  animate={{y: 0, opacity: 1}}>
+  inital={{opacity: 0}}
+  animate={{opacity: 1}}
+  transition={{duration: 0.3}}>
       <div className="name">
         <h2>Lorem I.</h2>
       </div>
@@ -63,7 +64,7 @@ const Navbar = () => {
         className="dropdown"
         initial={{y: -15, opacity: 0}}
         animate={{y: 0, opacity: 1}}
-        transition={{type: "tween", delay: 0.2}}>
+        transition={{type: "tween", delay: 0.2, duration: 0.2, ease: 'easeOut'}}>
   
         <div className="navigation">
           <Link to="../components/Home">
