@@ -1,9 +1,14 @@
+import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "react-router-dom";
 
 const Food = () => {
 
-  return (  
-      <div className="food-section">
+  return (
+      <AnimatePresence>  
+      <motion.div className="food-section"
+      initial={{y: -10, opacity: 0}}
+      animate={{y: 0, opacity: 1}}
+      transition={{type: 'tween', duration: 0.2, delay: 0.2}}>
         <div className="background-2">
           <div className="header-2">
             <h1>My recepies</h1>
@@ -45,7 +50,8 @@ const Food = () => {
             </button>
           </div>
         </div>
-      </div>
+      </motion.div>
+      </AnimatePresence>
   );
 }
  
