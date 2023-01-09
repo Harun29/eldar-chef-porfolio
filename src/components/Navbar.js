@@ -25,8 +25,12 @@ const Navbar = () => {
 
   window.addEventListener('scroll', changeBackground);
 
-  return ( 
-  <header className={`${isScrolled||dropdown ? 'navbar active' : 'navbar'}${pathname === '/pages/About' ? ' not-home' : ''}`}>
+  return (
+  <AnimatePresence> 
+  <motion.header 
+  className={`${isScrolled||dropdown ? 'navbar active' : 'navbar'}${pathname === '/pages/About' ? ' not-home' : ''}`}
+  inital={{y: -15, opacity: 0}}
+  animate={{y: 0, opacity: 1}}>
       <div className="name">
         <h2>Lorem I.</h2>
       </div>
@@ -83,7 +87,8 @@ const Navbar = () => {
       </motion.nav>
     ) : null}
     </AnimatePresence>
-  </header>
+  </motion.header>
+  </AnimatePresence>
   );
 }
  
