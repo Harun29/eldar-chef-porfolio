@@ -64,7 +64,7 @@ const Navbar = () => {
         className="dropdown"
         initial={{y: -15, opacity: 0}}
         animate={{y: 0, opacity: 1}}
-        transition={{type: "tween", delay: 0.2, duration: 0.2, ease: 'easeOut'}}>
+        transition={{type: "tween", delay: 0.2, duration: 0.2, ease: 'easeInOut'}}>
   
         <div className="navigation">
           <Link to="../components/Home">
