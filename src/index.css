@@ -214,6 +214,7 @@ main .welcome {
   background-image: url('https://media.istockphoto.com/id/1278745986/photo/culinary-background-with-traditional-ingredients-of-italian-cuisine.jpg?b=1&s=170667a&w=0&k=20&c=jct5dpWc9sFrs6g4_u9n1aV7IDBEJ5n3T9lF75sMft8=');
   background-repeat: no-repeat;
   background-position: bottom;
+  animation-delay: 0.1s;
 }
 
 .welcome .intro{
@@ -276,7 +277,7 @@ main .welcome {
   display: flex;
   justify-content: center;
   align-items: center;
-  
+  animation-delay: 0.2s;
 }
 
 .header-2{
@@ -359,6 +360,7 @@ main .welcome {
   color: white;
   background-image: url('https://media.istockphoto.com/id/1169326482/video/chef-cooking-in-restaurant-kitchen-blurred-defocused-background.jpg?s=640x640&k=20&c=zHCvhmcllwprGxEN44M9u0ZrtUl91Q-5aty6llxwtX8=');
   background-size: cover;
+  animation-delay: 0.3s;
 }
 
 .lessons h4{

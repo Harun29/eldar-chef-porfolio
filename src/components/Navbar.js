@@ -2,9 +2,9 @@ import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { faArrowUp } from "@fortawesome/free-solid-svg-icons";
-import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "react-router-dom";
 import { useLocation } from "react-router-dom";
+import { motion, AnimatePresence } from "framer-motion";
 
 const Navbar = () => {
   const [dropdown, setDropdown] = useState(false);
@@ -26,12 +26,11 @@ const Navbar = () => {
   window.addEventListener('scroll', changeBackground);
 
   return (
-  <AnimatePresence> 
-  <motion.header 
-  className={`${isScrolled||dropdown ? 'navbar active' : 'navbar'}${pathname === '/pages/About' ? ' not-home' : ''}`}
-  inital={{opacity: 0}}
-  animate={{opacity: 1}}
-  transition={{duration: 0.3}}>
+  <header 
+  className={`${isScrolled||dropdown ? 'navbar active' : 'navbar'}${pathname === '/pages/About' ? ' not-home' : ''}
+  animate__animated 
+  animate__fadeInDown 
+  animate__faster`}>
       <div className="name">
         <h2>Lorem I.</h2>
       </div>
@@ -58,13 +57,12 @@ const Navbar = () => {
         </button>
       </div>
 
-    <AnimatePresence>
     {dropdown ? (
-      <motion.nav 
-        className="dropdown"
-        initial={{y: -15, opacity: 0}}
-        animate={{y: 0, opacity: 1}}
-        transition={{type: "tween", delay: 0.2, duration: 0.2, ease: 'easeOut'}}>
+      <nav 
+        className="dropdown
+        animate__animated 
+        animate__fadeInDown 
+        animate__faster">
   
         <div className="navigation">
           <Link to="../components/Home">
@@ -85,11 +83,9 @@ const Navbar = () => {
         <div className="navigation">
           <button>Cooking lessons</button>
         </div>
-      </motion.nav>
+      </nav>
     ) : null}
-    </AnimatePresence>
-  </motion.header>
-  </AnimatePresence>
+  </header>
   );
 }
  

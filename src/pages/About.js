@@ -1,12 +1,9 @@
-import { motion, AnimatePresence } from "framer-motion";
-
 const About = () => {
-  return ( 
-    <AnimatePresence> 
-    <motion.main className="about"
-    initial={{y: -10, opacity: 0}}
-    animate={{y: 0, opacity: 1}}
-    transition={{type: 'tween', duration: 0.2, ease: 'easeOut'}}>
+  return (
+    <main className="about
+    animate__animated 
+    animate__fadeInDown 
+    animate__faster">
       <div className="profile-picture">
         <img src="https://media.istockphoto.com/id/842433166/vector/mustachioed-chef-icon-cook-avatar-profile.jpg?s=612x612&w=0&k=20&c=h7a37Q6MRXZesXzt5K1kTQs_hF3EW40LwhI3QakzpZ0=" alt="" />
       </div>
@@ -18,8 +15,7 @@ const About = () => {
           Request my cv
         </button>
       </div>
-    </motion.main>
-    </AnimatePresence>
+    </main>
   );
 }
  

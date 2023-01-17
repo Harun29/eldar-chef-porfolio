@@ -3,12 +3,13 @@ import Navbar from "./components/Navbar";
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Home from "./components/Home";
 import About from "./pages/About";
+import 'animate.css';
 
 function App() {
 
   return (
     <Router>
-      <div className="App">
+      <div className="App"> 
         <Navbar />
           <div className="content">
             <Switch>
