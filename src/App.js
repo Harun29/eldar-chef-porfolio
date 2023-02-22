@@ -17,8 +17,8 @@ function App() {
         <Navbar />
           <div className="content">
             <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/pages/About" element={<About />}/>
+              <Route path={["/", "/components/home"]} element={<Home />} />
+              <Route path="/pages/about" element={<About />}/>
               <Route path="/admin" element={<Login />}/>
               {/* <Route path='/admin/add-recepies' element={<PrivateRoute component={AddRecepie} />}/> */}
             </Routes>

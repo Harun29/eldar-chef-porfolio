@@ -5,11 +5,13 @@ import { faArrowUp } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
+import { useAuth } from "../context/AuthContext";
 
 const Navbar = () => {
   const [dropdown, setDropdown] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const { pathname } = useLocation();
+  const { currentUser } = useAuth
 
   const handleDropdown = () => {
     setDropdown(!dropdown);
@@ -27,7 +29,7 @@ const Navbar = () => {
 
   return (
   <header 
-  className={`${isScrolled||dropdown ? 'navbar active' : 'navbar'}${pathname === '/pages/About' ? ' not-home' : ''}
+  className={`${isScrolled||dropdown ? 'navbar active' : 'navbar'}${pathname !== '/' ? ' not-home' : ''}
   animate__animated 
   animate__fadeInDown 
   animate__faster`}>
@@ -65,13 +67,13 @@ const Navbar = () => {
         animate__faster">
   
         <div className="navigation">
-          <Link to="../components/Home">
+          <Link to="../components/home">
             <button onClick={handleDropdown}>Home</button>
           </Link>
         </div>
         
         <div className="navigation">
-          <Link to="../pages/About">
+          <Link to="../pages/about">
             <button onClick={handleDropdown}>About me</button>
           </Link>
         </div>
