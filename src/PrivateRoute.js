@@ -5,7 +5,9 @@ import { useAuth } from '../context/AuthContext';
 const PrivateRoute = ({component: Component, ...rest}) => {
   const { currentUser } = useAuth();
 
-  return currentUser ? (
+  const admin = 'eldarkarahmetovic@gmail.com'
+
+  return currentUser.email === admin ? (
     <Component {...rest}/>
   ) : (
     <Navigate to="/" />
