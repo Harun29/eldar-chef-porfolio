@@ -1,6 +1,6 @@
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from "./components/Home";
 import About from "./pages/About";
 import 'animate.css';
@@ -12,14 +12,10 @@ function App() {
       <div className="App"> 
         <Navbar />
           <div className="content">
-            <Switch>
-              <Route exact path={["/", "/components/Home"]}>
-                <Home />
-              </Route>
-              <Route exact path="/pages/About">
-                <About />
-              </Route>
-            </Switch>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/pages/About" element={<About />}/>
+            </Routes>
           </div>
         <Footer />
       </div>
