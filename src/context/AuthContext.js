@@ -12,8 +12,8 @@ export function useAuth() {
 
 export function AuthProvider ({children}) {
  
-  const [currentUser, setCurrentUser] = useState()
-  const [loading, setLoading] = useState(true)
+  const [currentUser, setCurrentUser] = useState();
+  const [loading, setLoading] = useState(true);
 
   function login(email, password){
     return signInWithEmailAndPassword(auth, email, password);
@@ -25,7 +25,7 @@ export function AuthProvider ({children}) {
       setLoading(false);
     })
     return unsubscribe
-  })
+  }, [])
 
   const value = {
     login,
@@ -39,3 +39,5 @@ export function AuthProvider ({children}) {
   )
 
 }
+
+export default AuthContext;

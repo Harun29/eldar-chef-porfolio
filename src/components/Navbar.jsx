@@ -67,13 +67,13 @@ const Navbar = () => {
         animate__faster">
   
         <div className="navigation">
-          <Link to="../components/home">
+          <Link to="/">
             <button onClick={handleDropdown}>Home</button>
           </Link>
         </div>
         
         <div className="navigation">
-          <Link to="../pages/about">
+          <Link to="/about">
             <button onClick={handleDropdown}>About me</button>
           </Link>
         </div>
