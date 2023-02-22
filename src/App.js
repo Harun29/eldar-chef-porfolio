@@ -2,13 +2,16 @@ import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from "./components/Home";
-import About from "./pages/About";
+import About from "./components/pages/About"
+import Login from "./components/admin/Login";
 import 'animate.css';
+import { AuthProvider } from "./context/AuthContext";
 // import PrivateRoute from "./PrivateRoute";
 
 function App() {
 
   return (
+    <AuthProvider>
     <Router>
       <div className="App"> 
         <Navbar />
@@ -23,6 +26,7 @@ function App() {
         <Footer />
       </div>
     </Router>
+    </AuthProvider>
   );
 }
 

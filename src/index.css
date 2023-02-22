@@ -436,3 +436,53 @@ main .welcome {
 .about .first-button{
   margin: 20px;
 }
+
+/* LOGIN FORM */
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background-color: #f2f2f2;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  box-sizing: border-box;
+  height: calc(100vh - 180px);  
+}
+
+.login-form label {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin: 10px 0;
+  width: 80%;
+}
+
+.login-form label input {
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  background-color: #fff;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+
+.login-submit-button {
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  background-color: #0077cc;
+  color: #fff;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.login-submit-button:hover {
+  background-color: #005ea3;
+}

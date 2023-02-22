@@ -1,4 +1,5 @@
 import { useAuth } from "../../context/AuthContext";
+import { useState } from "react";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -21,24 +22,26 @@ const Login = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit}
+    className="login-form">
       <label>
-        Email:
         <input
           type="email"
           value={email}
+          placeholder='email'
           onChange={(e) => setEmail(e.target.value)}
         />
       </label>
       <label>
-        Password:
         <input
           type="password"
           value={password}
+          placeholder='password'
           onChange={(e) => setPassword(e.target.value)}
         />
       </label>
-      <button type="submit">Login</button>
+      <button className="login-submit-button" type="submit">Login</button>
+      {error && <p>{error}</p>}
     </form>
   );
 
