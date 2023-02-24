@@ -43,7 +43,7 @@ const Login = () => {
           onChange={(e) => setPassword(e.target.value)}
         />
       </label>
-      <button className="login-submit-button" type="submit">Login</button>
+      <button disabled={loading} className="login-submit-button" type="submit">Login</button>
       {error && <p>{error}</p>}
     </form>
   );
