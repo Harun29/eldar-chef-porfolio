@@ -11,7 +11,7 @@ const Navbar = () => {
   const [dropdown, setDropdown] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const { pathname } = useLocation();
-  const { currentUser } = useAuth
+  const { currentUser } = useAuth();
 
   const handleDropdown = () => {
     setDropdown(!dropdown);
@@ -85,6 +85,10 @@ const Navbar = () => {
         <div className="navigation">
           <button>Cooking lessons</button>
         </div>
+
+        {currentUser ? <div className="navigation">
+          <button>Add Recepies</button>
+        </div> : null}
       </nav>
     ) : null}
   </header>
