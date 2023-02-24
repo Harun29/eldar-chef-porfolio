@@ -86,9 +86,13 @@ const Navbar = () => {
           <button>Cooking lessons</button>
         </div>
 
-        {currentUser ? <div className="navigation">
-          <button>Add Recepies</button>
-        </div> : null}
+        {currentUser ? 
+          <div className="navigation">
+            <Link to="/add-recepies">
+              <button>Add Recepies</button>
+            </Link>
+          </div> 
+        : null}
       </nav>
     ) : null}
   </header>

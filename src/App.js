@@ -6,7 +6,8 @@ import About from "./components/pages/About"
 import Login from "./components/admin/Login";
 import 'animate.css';
 import { AuthProvider } from "./context/AuthContext";
-// import PrivateRoute from "./PrivateRoute";
+import PrivateRoute from "./PrivateRoute";
+import AddRecepie from "./components/admin/AddRecepie";
 
 function App() {
 
@@ -20,7 +21,7 @@ function App() {
               <Route path="/" element={<Home />} />
               <Route path="/about" element={<About />} />
               <Route path="/admin" element={<Login />} />
-              {/* <Route path='/admin/add-recepies' element={<PrivateRoute component={AddRecepie} />}/> */}
+              <Route path='/add-recepies' element={<PrivateRoute component={AddRecepie} />}/>
             </Routes>
           </div>
         <Footer />
