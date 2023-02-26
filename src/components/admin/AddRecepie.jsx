@@ -11,6 +11,8 @@ import { v4 } from "uuid";
 
 const AddRecepie = () => {
 
+  const [numberOfLetters, setNumberOfLetters] = useState(0)
+
   const [title, setTitle] = useState('')
   const [shortDescription, setShortDescription] = useState('')
   const [fullDescription, setFullDescription] = useState('')
@@ -82,6 +84,8 @@ const AddRecepie = () => {
       fdescription: fullDescription,
       imgName: imgName
     });
+
+    setNumberOfLetters(shortDescription.length)
   }, [title, shortDescription, fullDescription, imgName])
 
 
@@ -107,22 +111,25 @@ const AddRecepie = () => {
         onChange={(e) => handleTextareaChange(e, setTitle)} 
         />
       </div>
-      <div className="short-description">
-      <textarea 
-        type="text"
-        required
-        value={shortDescription}
-        placeholder="short description"
-        onChange={(e) => handleTextareaChange(e, setShortDescription)}
+      <div className={`short-description ${numberOfLetters > 100 ? ' too-much' : ''}`}>
+        <textarea
+          type="text"
+          required
+          value={shortDescription}
+          placeholder="short description"
+          onChange={(e) => handleTextareaChange(e, setShortDescription)}
         />
+        <div className="letter-counter">
+          {numberOfLetters} / 100
+        </div>
       </div>
       <div className="full-description">
-      <textarea 
-        type="text"
-        required
-        value={fullDescription}
-        placeholder="full description"
-        onChange={(e) => handleTextareaChange(e, setFullDescription)}
+        <textarea 
+          type="text"
+          required
+          value={fullDescription}
+          placeholder="full description"
+          onChange={(e) => handleTextareaChange(e, setFullDescription)}
         />
       </div>
 
@@ -143,7 +150,7 @@ const AddRecepie = () => {
       />
     </div>
 
-      <button disabled={loading} type="submit" className="recepie-submit">Submit</button>
+      <button disabled={loading || numberOfLetters > 100} type="submit" className="recepie-submit">Submit</button>
 
       {error ? 
       <h3>{error}</h3>
