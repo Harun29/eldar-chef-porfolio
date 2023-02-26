@@ -22,11 +22,16 @@ const AddRecepie = () => {
 
   const [imageUpload, setImageUpload] = useState(null);
   const [imgName, setImgName] = useState('')
+  const [selectedImage, setSelectedImage] = useState(null);
 
   const handleImageChange = (e) => {
-    setImageUpload(e.target.files[0])
-    setImgName(imageUpload.name + v4())
-  }
+    const file = e.target.files[0];
+    if (file) {
+      setImageUpload(file);
+      setImgName(file.name + v4());
+      setSelectedImage(URL.createObjectURL(file));
+    }
+  };
 
   const uploadFile = async () => {
     try {
@@ -111,13 +116,24 @@ const AddRecepie = () => {
         onChange={(e) => setFullDescription(e.target.value)} 
         />
       </div>
+
       <div className="add-image">
-        <input 
-        type="file" 
-        onChange={(e) => {
-          handleImageChange(e);
-        }}/>
-      </div>
+      <label htmlFor="image-upload" className="add-image-label">
+        {selectedImage ? (
+          <img src={selectedImage} alt="Selected image" className="add-image-preview" />
+        ) : (
+          <span>Select an image</span>
+        )}
+      </label>
+      <input 
+        type="file"
+        id="image-upload"
+        className="add-image-input"
+        accept="image/*"
+        onChange={handleImageChange}
+      />
+    </div>
+
       <button disabled={loading} type="submit" className="recepie-submit">Submit</button>
 
       {error ? 
