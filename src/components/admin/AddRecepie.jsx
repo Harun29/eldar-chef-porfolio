@@ -102,6 +102,7 @@ const AddRecepie = () => {
     className="add-recepies"
     onSubmit={handleSubmit}
     >
+      <h2>Dodaj recept</h2>
       <div className="add-title">
         <textarea 
         type="text"

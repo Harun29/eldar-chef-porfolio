@@ -496,6 +496,13 @@ main .welcome {
   font-family: Arial, sans-serif;
   max-width: 600px;
   margin: 100px auto;
+  font-family: 'Raleway', sans-serif;
+}
+
+.add-recepies h2{
+  font-size: 40px;
+  font-weight: 500;
+  margin-bottom: 20px;
 }
 
 .add-recepies div{
@@ -529,12 +536,12 @@ main .welcome {
   box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
 }
 
-.short-description{
-  position: relative;
-}
-
 .short-description.too-much textarea{
   border: 1px solid red;
+}
+
+.short-description{
+  position: relative;
 }
 
 .letter-counter {
@@ -543,6 +550,10 @@ main .welcome {
   bottom: 15px;
   right: 0;
   font-size: 12px;
+}
+
+.full-description, .full-description textarea{
+  min-height: 200px;
 }
 
 .add-image {
