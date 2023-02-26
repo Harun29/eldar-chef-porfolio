@@ -4,8 +4,7 @@ import { addDoc, collection } from "firebase/firestore";
 import { useNavigate } from "react-router";
 import {
   ref,
-  uploadBytes,
-  getDownloadURL
+  uploadBytes
 } from "firebase/storage";
 import { storage } from "../../config/firebase";
 import { v4 } from "uuid";
@@ -22,20 +21,33 @@ const AddRecepie = () => {
   const [recepie, setRecepie] = useState()
 
   const [imageUpload, setImageUpload] = useState(null);
-  const [imgURL, setImgURL] = useState('')
+  const [imgName, setImgName] = useState('')
+
+  const handleImageChange = (e) => {
+    setImageUpload(e.target.files[0])
+    setImgName(imageUpload.name + v4())
+  }
 
   const uploadFile = async () => {
     try {
       if (imageUpload == null) return;
-      const imageRef = ref(storage, `images/${imageUpload.name + v4()}`);
-      const snapshot = await uploadBytes(imageRef, imageUpload);
-      const url = await getDownloadURL(snapshot.ref);
-      setImgURL(url);
-      console.log(url);
+      const imageRef = ref(storage, `images/${imgName}`);
+      await uploadBytes(imageRef, imageUpload);
     } catch (err){
       console.error('Error adding image: ', err);
     }
   };
+
+  // if (imgName.length > 0) {
+  //   const imageRef = ref(storage, `images/${imgName}`);
+  //   getDownloadURL(imageRef)
+  //     .then(url => {
+  //       console.log('Download URL:', url);
+  //     })
+  //     .catch(error => {
+  //       console.error('Error getting download URL:', error);
+  //     });
+  // }
 
   const addData = async (data) => {
     try {
@@ -64,9 +76,10 @@ const AddRecepie = () => {
       title: title,
       sdescription: shortDescription,
       fdescription: fullDescription,
-      imgurl: imgURL
+      imgName: imgName
     });
-  }, [title, shortDescription, fullDescription, imgURL])
+    console.log('here 1')
+  }, [title, shortDescription, fullDescription, imgName])
 
   return (
     <form 
@@ -104,7 +117,7 @@ const AddRecepie = () => {
         <input 
         type="file" 
         onChange={(e) => {
-          setImageUpload(e.target.files[0]);
+          handleImageChange(e);
         }}/>
       </div>
       <button disabled={loading} type="submit" className="recepie-submit">Submit</button>
