@@ -498,9 +498,9 @@ main .welcome {
   margin: 100px auto;
 }
 
-.add-title input,
-.short-description input,
-.full-description input {
+.add-title textarea,
+.short-description textarea,
+.full-description textarea {
   width: 100%;
   margin-bottom: 10px;
   padding: 12px;
@@ -509,15 +509,21 @@ main .welcome {
   font-size: 16px;
   outline: none;
   transition: box-shadow 0.2s ease-in-out;
+  word-break: break-all;
+  
+  min-height: 20px;
+  overflow: hidden;
+  resize: none;
 }
 
-.add-title input:focus,
-.short-description input:focus,
-.full-description input:focus {
+.add-title textarea:focus,
+.short-description textarea:focus,
+.full-description textarea:focus {
   box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
 }
 
 .add-image {
+  margin: 20px 0;
   display: flex;
   flex-direction: column;
   align-items: center;

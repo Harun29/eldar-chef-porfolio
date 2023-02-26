@@ -84,43 +84,52 @@ const AddRecepie = () => {
     });
   }, [title, shortDescription, fullDescription, imgName])
 
+
+  /* FUNCTION FOR EXPANDING TEXT AREA */
+  const handleTextareaChange = (e, setFunction) => {
+    setFunction(e.target.value);
+
+    e.target.style.height = 'auto';
+    e.target.style.height = `calc(${e.target.scrollHeight }px - 25px`;
+  }
+
   return (
     <form 
     className="add-recepies"
     onSubmit={handleSubmit}
     >
       <div className="add-title">
-        <input 
+        <textarea 
         type="text"
         required
         value={title}
         placeholder="Title"
-        onChange={(e) => setTitle(e.target.value)} 
+        onChange={(e) => handleTextareaChange(e, setTitle)} 
         />
       </div>
       <div className="short-description">
-      <input 
+      <textarea 
         type="text"
         required
         value={shortDescription}
         placeholder="short description"
-        onChange={(e) => setShortDescription(e.target.value)} 
+        onChange={(e) => handleTextareaChange(e, setShortDescription)}
         />
       </div>
       <div className="full-description">
-      <input 
+      <textarea 
         type="text"
         required
         value={fullDescription}
         placeholder="full description"
-        onChange={(e) => setFullDescription(e.target.value)} 
+        onChange={(e) => handleTextareaChange(e, setFullDescription)}
         />
       </div>
 
       <div className="add-image">
       <label htmlFor="image-upload" className="add-image-label">
         {selectedImage ? (
-          <img src={selectedImage} alt="Selected image" className="add-image-preview" />
+          <img src={selectedImage} alt="Selected" className="add-image-preview" />
         ) : (
           <span>Select an image</span>
         )}
