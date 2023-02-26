@@ -3,15 +3,17 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { faArrowUp } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { useAuth } from "../context/AuthContext";
 
 const Navbar = () => {
   const [dropdown, setDropdown] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [error, setError] = useState('');
+  const navigate = useNavigate();
   const { pathname } = useLocation();
-  const { currentUser } = useAuth();
+  const { currentUser, logout } = useAuth();
 
   const navRef = useRef(null);
 
@@ -40,6 +42,19 @@ const Navbar = () => {
       setIsScrolled(false);
     }
   };
+
+  const handleLogout = async () => {
+    setError('')
+    try{
+      await logout()
+      navigate('/')
+      handleDropdown();
+    } catch (err) {
+      setError('Failed to logout')
+      console.log(err)
+      alert (error)
+    }
+  }
 
   window.addEventListener('scroll', changeBackground);
 
@@ -108,6 +123,12 @@ const Navbar = () => {
             <Link to="/add-recepies">
               <button onClick={handleDropdown}>Add Recepies</button>
             </Link>
+          </div> 
+        : null}
+
+        {currentUser ? 
+          <div className="navigation">
+            <button onClick={handleLogout}>Logout</button>
           </div> 
         : null}
       </nav>
