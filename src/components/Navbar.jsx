@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { faArrowUp } from "@fortawesome/free-solid-svg-icons";
@@ -12,6 +12,22 @@ const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const { pathname } = useLocation();
   const { currentUser } = useAuth();
+
+  const navRef = useRef(null);
+
+  useEffect(() => {
+    const handleOutsideClick = (event) => {
+      if (navRef.current && !navRef.current.contains(event.target)) {
+        setDropdown(false);
+      }
+    };
+
+    window.addEventListener("click", handleOutsideClick);
+
+    return () => {
+      window.removeEventListener("click", handleOutsideClick);
+    };
+  }, [navRef]);
 
   const handleDropdown = () => {
     setDropdown(!dropdown);
@@ -29,6 +45,7 @@ const Navbar = () => {
 
   return (
   <header 
+  ref={navRef}
   className={`${isScrolled||dropdown ? 'navbar active' : 'navbar'}${pathname !== '/' ? ' not-home' : ''}
   animate__animated 
   animate__fadeInDown 
