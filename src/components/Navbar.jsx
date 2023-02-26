@@ -79,17 +79,17 @@ const Navbar = () => {
         </div>
         
         <div className="navigation">
-          <button>Recepies</button>
+          <button onClick={handleDropdown}>Recepies</button>
         </div>
 
         <div className="navigation">
-          <button>Cooking lessons</button>
+          <button onClick={handleDropdown}>Cooking lessons</button>
         </div>
 
         {currentUser ? 
           <div className="navigation">
             <Link to="/add-recepies">
-              <button>Add Recepies</button>
+              <button onClick={handleDropdown}>Add Recepies</button>
             </Link>
           </div> 
         : null}

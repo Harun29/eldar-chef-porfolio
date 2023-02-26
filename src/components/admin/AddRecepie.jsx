@@ -51,7 +51,6 @@ const AddRecepie = () => {
 
   const addData = async (data) => {
     try {
-      console.log('here 2')
       const docRef = await addDoc(collection(db, 'recepies'), data);
       console.log('Document written with ID: ', docRef.id);
     } catch (err) {
@@ -78,7 +77,6 @@ const AddRecepie = () => {
       fdescription: fullDescription,
       imgName: imgName
     });
-    console.log('here 1')
   }, [title, shortDescription, fullDescription, imgName])
 
   return (
