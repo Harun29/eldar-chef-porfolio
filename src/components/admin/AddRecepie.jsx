@@ -99,7 +99,11 @@ const AddRecepie = () => {
 
   return (
     <form 
-    className="add-recepies"
+    className="
+    add-recepies
+    animate__animated 
+    animate__fadeInDown 
+    animate__faster"
     onSubmit={handleSubmit}
     >
       <h2>Dodaj recept</h2>
