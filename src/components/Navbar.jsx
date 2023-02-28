@@ -111,7 +111,9 @@ const Navbar = () => {
         </div>
         
         <div className="navigation">
-          <button onClick={handleDropdown}>Recepies</button>
+          <Link to="/recepies">
+            <button onClick={handleDropdown}>Recepies</button>
+          </Link>
         </div>
 
         <div className="navigation">
