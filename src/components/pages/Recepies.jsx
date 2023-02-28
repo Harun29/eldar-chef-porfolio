@@ -14,12 +14,13 @@ const Recepies = () => {
       const querySnapshot = await getDocs(usersRef);
 
       querySnapshot.forEach((doc) => {
-        const recepies = doc.data()
+        const recepie = doc.data()
+        console.log(recepie)
         recepiesSnapshot.push({
           id: doc.id,
-          title: recepies.title,
-          shortDescription: recepies.sdescription,   
-          imageURL: recepies.imgurl
+          title: recepie.title,
+          shortDescription: recepie.sdescription,   
+          imageName: recepie.imgName
         })
       })
       setRecepies(recepiesSnapshot)
@@ -42,10 +43,10 @@ const Recepies = () => {
   } else{
     return(
       <div className="recepies">
-        {recepies.forEach(({title, shortDescription, imgurl}) => {
+        {recepies.forEach(({title, shortDescription, imageName}) => {
           console.log(title)
           console.log(shortDescription)
-          console.log(imgurl)
+          console.log(imageName)
         })}
       </div>
     )
