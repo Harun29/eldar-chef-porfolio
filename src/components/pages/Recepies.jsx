@@ -9,27 +9,25 @@ const Recepies = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    let recepieSnapshot = []
     async function fetchData() {
       const usersRef = collection(db, 'recepies');
       const querySnapshot = await getDocs(usersRef);
-      
-
-      querySnapshot.forEach(async (doc) => {
-        const recepie = doc.data()
+      const promises = querySnapshot.docs.map(async (doc) => {
+        const recepie = doc.data();
         const url = await getDownloadURL(ref(storage, `images/${recepie.imgName}`));
-        console.log(recepie)
-        console.log(url)
-        recepieSnapshot.push({
+        console.log(recepie);
+        console.log(url);
+        return {
           id: doc.id,
           title: recepie.title,
           shortDescription: recepie.sdescription,   
           imageURL: url
-        })
-        console.log(recepieSnapshot)
-      })
-      setRecepies(recepieSnapshot)
+        };
+      });
+      const recepieSnapshot = await Promise.all(promises);
+      setRecepies(recepieSnapshot);
     }
+    
     fetchData();
   }, [])
 
