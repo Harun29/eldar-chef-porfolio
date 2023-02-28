@@ -46,17 +46,6 @@ const AddRecepie = () => {
     }
   };
 
-  // if (imgName.length > 0) {
-  //   const imageRef = ref(storage, `images/${imgName}`);
-  //   getDownloadURL(imageRef)
-  //     .then(url => {
-  //       console.log('Download URL:', url);
-  //     })
-  //     .catch(error => {
-  //       console.error('Error getting download URL:', error);
-  //     });
-  // }
-
   const getImgURL = async() => {
     const imageRef = ref(storage, `images/${imgName}`);
     getDownloadURL(imageRef)
