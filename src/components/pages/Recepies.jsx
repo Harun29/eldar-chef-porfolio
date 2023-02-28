@@ -15,8 +15,6 @@ const Recepies = () => {
       const promises = querySnapshot.docs.map(async (doc) => {
         const recepie = doc.data();
         const url = await getDownloadURL(ref(storage, `images/${recepie.imgName}`));
-        console.log(recepie);
-        console.log(url);
         return {
           id: doc.id,
           title: recepie.title,
@@ -53,7 +51,10 @@ const Recepies = () => {
     )
   } else{
     return(
-      <div className="recepies">
+      <div className="recepies
+      animate__animated 
+      animate__fadeInDown 
+      animate__faster">
         loading...
       </div>
     )

@@ -4,8 +4,7 @@ import { addDoc, collection } from "firebase/firestore";
 import { useNavigate } from "react-router";
 import {
   ref,
-  uploadBytes,
-  getDownloadURL
+  uploadBytes
 } from "firebase/storage";
 import { storage } from "../../config/firebase";
 import { v4 } from "uuid";
@@ -46,17 +45,6 @@ const AddRecepie = () => {
     }
   };
 
-  const getImgURL = async() => {
-    const imageRef = ref(storage, `images/${imgName}`);
-    getDownloadURL(imageRef)
-      .then(url => {
-        console.log('Download URL:', url);
-      })
-      .catch(error => {
-        console.error('Error getting download URL:', error);
-      });
-  }
-
   const addData = async (data) => {
     try {
       const docRef = await addDoc(collection(db, 'recepies'), data);
@@ -71,7 +59,6 @@ const AddRecepie = () => {
     try{
       setLoading(true);
       await uploadFile();
-      await getImgURL();
       await addData(recepie);
       navigate('/')
     } catch (err) {
