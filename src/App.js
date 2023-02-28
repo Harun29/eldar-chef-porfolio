@@ -4,10 +4,12 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from "./components/Home";
 import About from "./components/pages/About"
 import Login from "./components/admin/Login";
+import Recepies from "./components/pages/Recepies";
+import AddRecepie from "./components/admin/AddRecepie";
+
 import 'animate.css';
 import { AuthProvider } from "./context/AuthContext";
 import PrivateRoute from "./PrivateRoute";
-import AddRecepie from "./components/admin/AddRecepie";
 
 function App() {
 
@@ -21,6 +23,7 @@ function App() {
               <Route path="/" element={<Home />} />
               <Route path="/about" element={<About />} />
               <Route path="/admin" element={<Login />} />
+              <Route path="/recepies" element={<Recepies />} />
               <Route path='/add-recepies' element={<PrivateRoute component={AddRecepie} />}/>
             </Routes>
           </div>
