@@ -40,13 +40,16 @@ const Recepies = () => {
   if(!loading){
     return(
       <div className="recepies">
-        {recepies.forEach(({title, shortDescription, imageURL}) => {
-          console.log(title)
-          console.log(shortDescription)
-          console.log(imageURL)
-        })}
-      </div>
-      
+      {recepies.map(({id, title, shortDescription, imageURL}) => (
+        <div className="recepie" key={id}>
+          <img src={imageURL} alt="food" />
+          <div className="description">
+            <h4>{title}</h4>
+            <p>{shortDescription}</p>
+          </div>
+        </div>
+      ))}
+    </div>
     )
   } else{
     return(
