@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { getDocs, collection } from "firebase/firestore";
 import { db, storage } from "../../config/firebase";
 import { getDownloadURL, ref } from "firebase/storage";
+import { Link } from "react-router-dom";
 
 const Recepies = () => {
 
@@ -39,13 +40,15 @@ const Recepies = () => {
     return(
       <div className="recepies">
       {recepies.map(({id, title, shortDescription, imageURL}) => (
-        <div className="recepie" key={id}>
-          <img src={imageURL} alt="food" />
-          <div className="description">
-            <h4>{title}</h4>
-            <p>{shortDescription}</p>
+        <Link to={`/recepie-detail/${id}`} >
+          <div className="recepie" key={id}>
+            <img src={imageURL} alt="food" />
+            <div className="description">
+              <h4>{title}</h4>
+              <p>{shortDescription}</p>
+            </div>
           </div>
-        </div>
+        </Link>
       ))}
     </div>
     )

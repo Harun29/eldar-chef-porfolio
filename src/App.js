@@ -6,6 +6,7 @@ import About from "./components/pages/About"
 import Login from "./components/admin/Login";
 import Recepies from "./components/pages/Recepies";
 import AddRecepie from "./components/admin/AddRecepie";
+import RecepieDetail from "./components/pages/RecepieDetail";
 
 import 'animate.css';
 import { AuthProvider } from "./context/AuthContext";
@@ -24,6 +25,7 @@ function App() {
               <Route path="/about" element={<About />} />
               <Route path="/admin" element={<Login />} />
               <Route path="/recepies" element={<Recepies />} />
+              <Route path="/recepie-detail/:id" element={<RecepieDetail />} />
               <Route path='/add-recepies' element={<PrivateRoute component={AddRecepie} />}/>
             </Routes>
           </div>

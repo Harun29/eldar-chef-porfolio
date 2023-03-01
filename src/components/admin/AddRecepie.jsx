@@ -83,7 +83,7 @@ const AddRecepie = () => {
     setFunction(e.target.value);
 
     e.target.style.height = 'auto';
-    e.target.style.height = `calc(${e.target.scrollHeight }px - 25px`;
+    e.target.style.height = `calc(${e.target.scrollHeight }px - 25px)`;
   }
 
   return (
