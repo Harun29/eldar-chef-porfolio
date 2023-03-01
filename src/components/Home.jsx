@@ -13,8 +13,8 @@ const Home = () => {
             <div className="greeting">
               <h1>Hello,</h1>
             </div>
-            <h2>I'm <span>Chef</span></h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ut tortor in augue placerat luctus. Cras placerat, nisi in pulvinar imperdiet, ligula est vestibulum dui, vel semper velit mauris bibendum dui.</p>
+            <h2>I'm <span>Chef</span> Eldar</h2>
+            <p>I am a chef specializing in Italian and Mediterranean cuisine. I have perfected my skills in making pizzas and pastas, and have worked exclusively in high-end hotels. My portfolio showcases my ability to create visually stunning and delicious dishes using only the freshest ingredients.</p>
             <div className="first-button">
               <Link to="/about"><button>About me</button></Link>
             </div>

@@ -44,7 +44,7 @@ const Food = () => {
 
           <div className="recepies-button">
             <button>
-              <Link to="/">Get my recepies</Link>
+              <Link to="/recepies">All recepies</Link>
             </button>
           </div>
         </div>

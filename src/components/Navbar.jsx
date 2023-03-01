@@ -66,7 +66,7 @@ const Navbar = () => {
   animate__fadeInDown 
   animate__faster`}>
       <div className="name">
-        <h2>Lorem I.</h2>
+        <h2>Eldar K.</h2>
       </div>
 
       <div className="menu-dropdown">
