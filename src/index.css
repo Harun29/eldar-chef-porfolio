@@ -530,6 +530,10 @@ main .welcome {
   resize: none;
 }
 
+.full-description textarea{
+  white-space: pre-wrap;
+}
+
 .add-title textarea:focus,
 .short-description textarea:focus,
 .full-description textarea:focus {
@@ -686,6 +690,8 @@ h3 {
   margin-top: 20px;
   word-wrap: break-word;
   word-break: break-all;
+  white-space: pre-wrap;
+  text-align: start;
 }
 
 .recepie-detail img {
