@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { db, storage } from "../../config/firebase";
-import { doc, getDoc } from "firebase/firestore";
+import { doc, getDoc, deleteDoc } from "firebase/firestore";
 import { getDownloadURL, ref } from "firebase/storage";
 
 const RecepieDetail = () => {
@@ -34,7 +34,7 @@ const RecepieDetail = () => {
       setLoading(false)
     }
   }, [recepie])
-
+  
 
   if(!loading){
     return(
