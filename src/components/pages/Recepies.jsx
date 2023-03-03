@@ -50,7 +50,6 @@ const Recepies = () => {
 
   if(!loading){
     return(
-      <div className="container">
       <div className="recepies">
       {recepies.map(({id, title, shortDescription, imageURL}) => (
         
@@ -69,7 +68,6 @@ const Recepies = () => {
             </button> : null}
           </div>
       ))}
-      </div>
       {confirmDelete ? 
         <div className="confirm-delete">
           <h4>Jesi li siguran da zelis izbrisati ovaj recept?</h4>

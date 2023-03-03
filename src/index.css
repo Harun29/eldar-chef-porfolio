@@ -675,23 +675,6 @@ h3 {
   margin: 8px 0 0 0;
 }
 
-.container {
-  position: relative;
-}
-
-.container::before {
-  content: "";
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: -1;
-  background-color: rgba(255, 255, 255, 0.8);
-  backdrop-filter: blur(10px);
-}
-
-
 .confirm-delete {
   font-size: 24px;
   width: 300px;
@@ -699,12 +682,16 @@ h3 {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  z-index: 999;
   background-color: white;
   padding: 1rem;
   border: 1px solid #f5c6cb;
   border-radius: 0.25rem;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  color: #343a40;
+  text-align: center;
+  line-height: 1.5;
 }
+
 
 .confirm-delete h4 {
   margin-top: 0;
