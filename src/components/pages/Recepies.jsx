@@ -45,7 +45,8 @@ const Recepies = () => {
 
   const handleDelete = async (recepieId) => {
     await deleteDoc(db, 'recepies', recepieId)
-    recepies.filter((item) => item.id !== recepieId)
+    setConfirmDelete(false)
+    setRecepies(recepies.filter((item) => item.id !== recepieId))
   }
 
   if(!loading){
@@ -66,21 +67,22 @@ const Recepies = () => {
             <button onClick={() => setConfirmDelete(true)}>
               <FontAwesomeIcon icon={faTrash} size="xl" />
             </button> : null}
+
+            {confirmDelete ? 
+              <div className="confirm-delete">
+                <h4>Jesi li siguran da zelis izbrisati ovaj recept?</h4>
+                <div className="confirm-buttons">
+                  <button onClick={() => handleDelete(id)}>
+                    Da
+                  </button>
+                  <button onClick={() => setConfirmDelete(false)}>
+                    Ne
+                  </button>
+                </div>
+              </div>
+            : null}
           </div>
       ))}
-      {confirmDelete ? 
-        <div className="confirm-delete">
-          <h4>Jesi li siguran da zelis izbrisati ovaj recept?</h4>
-          <div className="confirm-buttons">
-            <button onClick={handleDelete}>
-              Da
-            </button>
-            <button onClick={() => setConfirmDelete(false)}>
-              Ne
-            </button>
-          </div>
-        </div>
-      : null}
     </div>
     )
   } else{
