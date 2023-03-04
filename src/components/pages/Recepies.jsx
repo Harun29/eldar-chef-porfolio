@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { getDocs, collection, deleteDoc } from "firebase/firestore";
+import { getDocs, collection, deleteDoc, doc } from "firebase/firestore";
 import { db, storage } from "../../config/firebase";
 import { getDownloadURL, ref } from "firebase/storage";
 import { Link } from "react-router-dom";
@@ -13,6 +13,7 @@ const Recepies = () => {
   const [loading, setLoading] = useState(true);
   const [confirmDelete, setConfirmDelete] = useState(false);
   const [idToDelete, setIdToDelete] = useState('')
+  const [docToDelete, setDocToDelete] = useState()
 
   const {currentUser} = useAuth()
 
@@ -47,16 +48,11 @@ const Recepies = () => {
   const handleConfirm = (id) => {
     setIdToDelete(id);
     setConfirmDelete(true);
+    setDocToDelete(doc(db, 'recepies', idToDelete))
   }
 
-  useEffect(()=>{
-    console.log("id to delete: ", idToDelete)
-  }, [idToDelete])
-
   const handleDelete = async () => {
-    console.log("db: ", db);
-    console.log("id for firebase: ", idToDelete);
-    await deleteDoc(db, 'recepies', idToDelete)
+    await deleteDoc(docToDelete)
     setConfirmDelete(false)
     setRecepies(recepies.filter((item) => item.id !== idToDelete))
   }
