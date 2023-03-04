@@ -52,6 +52,10 @@ const Recepies = () => {
   if(!loading){
     return(
       <div className="recepies">
+      {confirmDelete ? 
+      <div className="dimmed-background"></div>
+      : null}
+      
       {recepies.map(({id, title, shortDescription, imageURL}) => (
         
           <div className="recepie" key={id}>

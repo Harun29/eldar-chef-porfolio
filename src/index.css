@@ -675,7 +675,19 @@ h3 {
   margin: 8px 0 0 0;
 }
 
+.dimmed-background{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+  backdrop-filter: blur(2px);
+}
+
 .confirm-delete {
+  z-index: 1000;
   font-size: 24px;
   width: 300px;
   position: fixed;
