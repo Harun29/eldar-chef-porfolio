@@ -12,6 +12,7 @@ const Recepies = () => {
   const [recepies, setRecepies] = useState([]);
   const [loading, setLoading] = useState(true);
   const [confirmDelete, setConfirmDelete] = useState(false);
+  const [idToDelete, setIdToDelete] = useState('')
 
   const {currentUser} = useAuth()
 
@@ -43,10 +44,21 @@ const Recepies = () => {
     console.log(recepies)
   }, [recepies])
 
-  const handleDelete = async (recepieId) => {
-    await deleteDoc(db, 'recepies', recepieId)
+  const handleConfirm = (id) => {
+    setIdToDelete(id);
+    setConfirmDelete(true);
+  }
+
+  useEffect(()=>{
+    console.log("id to delete: ", idToDelete)
+  }, [idToDelete])
+
+  const handleDelete = async () => {
+    console.log("db: ", db);
+    console.log("id for firebase: ", idToDelete);
+    await deleteDoc(db, 'recepies', idToDelete)
     setConfirmDelete(false)
-    setRecepies(recepies.filter((item) => item.id !== recepieId))
+    setRecepies(recepies.filter((item) => item.id !== idToDelete))
   }
 
   if(!loading){
@@ -68,7 +80,7 @@ const Recepies = () => {
             </Link>
 
             {currentUser ? 
-            <button onClick={() => setConfirmDelete(true)}>
+            <button key={id} onClick={() => handleConfirm(id)}>
               <FontAwesomeIcon icon={faTrash} size="xl" />
             </button> : null}
 
@@ -76,7 +88,7 @@ const Recepies = () => {
               <div className="confirm-delete">
                 <h4>Jesi li siguran da zelis izbrisati ovaj recept?</h4>
                 <div className="confirm-buttons">
-                  <button onClick={() => handleDelete(id)}>
+                  <button onClick={handleDelete}>
                     Da
                   </button>
                   <button onClick={() => setConfirmDelete(false)}>
