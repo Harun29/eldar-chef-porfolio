@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { getDocs, collection, deleteDoc, doc } from "firebase/firestore";
 import { db, storage } from "../../config/firebase";
-import { getDownloadURL, ref } from "firebase/storage";
+import { getDownloadURL, ref, deleteObject, listAll } from "firebase/storage";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrash } from "@fortawesome/free-solid-svg-icons";
@@ -17,6 +17,12 @@ const Recepies = () => {
 
   const {currentUser} = useAuth()
 
+  // const listRef = ref(storage, 'images/');
+
+
+  // const imgNames = []
+  // const currentImagesNames = []
+
   useEffect(() => {
     async function fetchData() {
       const usersRef = collection(db, 'recepies');
@@ -28,7 +34,8 @@ const Recepies = () => {
           id: doc.id,
           title: recepie.title,
           shortDescription: recepie.sdescription,   
-          imageURL: url
+          imageURL: url,
+          imageName: recepie.imgName
         };
       });
       const recepieSnapshot = await Promise.all(promises);
@@ -42,8 +49,34 @@ const Recepies = () => {
     if (Object.keys(recepies).length > 0){
       setLoading(false)
     }
-    console.log(recepies)
   }, [recepies])
+
+  // useEffect(() => {
+  //   recepies.forEach((recepie) => {
+  //     currentImagesNames.push(recepie.imageName)
+  //   })
+  // }, [recepies])
+
+  // useEffect(() => {
+  //   imgNames.forEach((imgName) => {
+  //     if(!(currentImagesNames.contains(imgName))){
+  //       deleteObject(storage, imgName)
+  //     }
+  //   })
+  // }, [currentImagesNames])
+
+  // useEffect(() => {
+  //   listAll(listRef)
+  //     .then((res) => {
+  //       res.items.forEach((itemRef) => {
+  //         console.log(itemRef.name)
+  //         imgNames.push(itemRef.name)
+  //       });
+  //     }).catch((error) => {
+  //       console.error(error)
+  //     });
+  //     console.log("img names: ", imgNames)
+  // }, [])
 
   const handleConfirm = (id) => {
     setIdToDelete(id);
