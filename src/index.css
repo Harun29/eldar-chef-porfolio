@@ -681,6 +681,15 @@ h3 {
   backdrop-filter: blur(2px);
 }
 
+.admin-buttons{
+  display: flex;
+  flex-direction: column;
+}
+
+.admin-buttons button{
+  margin: 5px 0;
+}
+
 .confirm-delete {
   z-index: 1000;
   font-size: 24px;
@@ -735,7 +744,6 @@ h3 {
 .confirm-buttons button:last-child:hover {
   background-color: #eee;
 }
-
 
 /* RECEPIE DETAIL */
 

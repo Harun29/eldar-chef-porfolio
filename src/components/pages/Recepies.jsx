@@ -4,7 +4,7 @@ import { db, storage } from "../../config/firebase";
 import { getDownloadURL, ref, deleteObject, listAll } from "firebase/storage";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faTrash } from "@fortawesome/free-solid-svg-icons";
+import { faTrash, faStar } from "@fortawesome/free-solid-svg-icons";
 import { useAuth } from "../../context/AuthContext";
 
 const Recepies = () => {
@@ -108,10 +108,16 @@ const Recepies = () => {
               </div>
             </Link>
 
-            {currentUser ? 
-            <button key={id} onClick={() => handleConfirm(id)}>
-              <FontAwesomeIcon icon={faTrash} size="xl" />
-            </button> : null}
+            {currentUser ?
+            <div className="admin-buttons"> 
+              <button key={id} onClick={() => handleConfirm(id)}>
+                <FontAwesomeIcon icon={faTrash} size="xl" />
+              </button>
+              <button>
+                <FontAwesomeIcon icon={faStar} size="xl"></FontAwesomeIcon>
+              </button>
+            </div>
+            : null}
 
             {confirmDelete ? 
               <div className="confirm-delete">
