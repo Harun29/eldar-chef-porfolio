@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import Food from "./home/Food";
-import Lessons from "./home/Lessons";
+import Experience from "./home/Experience"
 
 const Home = () => {
   return (  
@@ -23,7 +23,7 @@ const Home = () => {
 
       <Food />
 
-      <Lessons />
+      <Experience />
     </main>
   );
 }

@@ -349,9 +349,9 @@ main .welcome {
 }
 
 
-/* COURSES SECTION */
+/* EXPERIENCE SECTION */
 
-.lessons {
+.experiences {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -364,51 +364,46 @@ main .welcome {
   animation-delay: 0.3s;
 }
 
-.lessons h4{
-  margin-top: 30px;
-  padding: 10px;
-  border-bottom: 1px solid white;
-  font-size: 22px;
+.experiences header{
+  color: black;
+  margin: 15px 0;
+  font-size: 24px;
+  background: rgba(255, 255, 255, 0.7);
+  padding: 5px;
+  border-radius: 5px;
 }
 
-.lessons iframe{
-  margin: 25px 25px 15px 25px;
-  width: 80%;
-  height: 185px;
-  border-radius: 20px;
-  border: 1px solid white;
-}
-
-.lessons .buttons{
+.experience {
+  background: rgba(255, 255, 255, 0.7);
+  padding: 20px 25px;
+  border-radius: 5px;
+  color: black;
   display: flex;
-  flex-direction: column;
-  margin-bottom: 10px;
-}
-
-.lessons button{
-  background-color: #DA291C;
-  border-radius: 3px;
-  border: none;
-  padding: 5px 15px;
-  margin: 6px;
-  font-family: 'Raleway', sans-serif;
-  font-weight: 500;
-  display: flex;
-  justify-content: center;
   align-items: center;
-  color: white;
+  margin-bottom: 20px;
 }
 
-.lessons svg{
-  padding: 5px 8px;
-  color: white;
+.experience img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 20px;
 }
 
-.lessons button:nth-child(2){
-  background: #7289da;
+.description-wrapper h4 {
+  font-size: 1.2rem;
+  margin-bottom: 5px;
 }
-.lessons button:nth-child(3){
-  background: #FF0000;
+
+.description-wrapper h5 {
+  font-size: 1rem;
+  margin-bottom: 5px;
+}
+
+.description-wrapper p {
+  font-size: 0.9rem;
+  margin-bottom: 0;
 }
 
 

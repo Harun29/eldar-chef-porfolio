@@ -112,7 +112,7 @@ const Navbar = () => {
         
         <div className="navigation">
           <Link to="/recepies">
-            <button onClick={handleDropdown}>Recepies</button>
+            <button onClick={handleDropdown}>Recipes</button>
           </Link>
         </div>
 

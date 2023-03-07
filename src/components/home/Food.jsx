@@ -9,7 +9,7 @@ const Food = () => {
       animate__faster">
         <div className="background-2">
           <div className="header-2">
-            <h1>My recepies</h1>
+            <h1>My recipes</h1>
           </div>
             <div className="food-pictures">
                 <Link to="/">
@@ -44,7 +44,7 @@ const Food = () => {
 
           <div className="recepies-button">
             <button>
-              <Link to="/recepies">All recepies</Link>
+              <Link to="/recepies">All recipes</Link>
             </button>
           </div>
         </div>
