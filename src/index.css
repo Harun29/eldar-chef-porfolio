@@ -769,6 +769,10 @@ h3 {
   background-color: #eee;
 }
 
+.clicked svg{
+  color: red;
+}
+
 /* RECEPIE DETAIL */
 
 .recepie-detail {

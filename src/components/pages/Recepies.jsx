@@ -9,6 +9,7 @@ import { useAuth } from "../../context/AuthContext";
 
 const Recepies = () => {
 
+  const [clickedStars, setClickedStars] = useState([]);
   const [recepies, setRecepies] = useState([]);
   const [loading, setLoading] = useState(true);
   const [confirmDelete, setConfirmDelete] = useState(false);
@@ -90,6 +91,14 @@ const Recepies = () => {
     setRecepies(recepies.filter((item) => item.id !== idToDelete))
   }
 
+  const handleStar = (id) => {
+    if (clickedStars.includes(id)) {
+      setClickedStars(clickedStars.filter((starId) => starId !== id));
+    } else {
+      setClickedStars([...clickedStars, id]);
+    }
+  };  
+
   if(!loading){
     return(
       <div className="recepies">
@@ -110,10 +119,12 @@ const Recepies = () => {
 
             {currentUser ?
             <div className="admin-buttons"> 
-              <button key={id} onClick={() => handleConfirm(id)}>
+              <button onClick={() => handleConfirm(id)}>
                 <FontAwesomeIcon icon={faTrash} size="xl" />
               </button>
-              <button>
+              <button onClick={() => handleStar(id)}
+                      className={clickedStars.includes(id) ? "clicked" : ""}
+              >
                 <FontAwesomeIcon icon={faStar} size="xl"></FontAwesomeIcon>
               </button>
             </div>
