@@ -86,9 +86,13 @@ const Recepies = () => {
   }
 
   const handleDelete = async () => {
-    await deleteDoc(docToDelete)
-    setConfirmDelete(false)
-    setRecepies(recepies.filter((item) => item.id !== idToDelete))
+    try{
+      await deleteDoc(docToDelete)
+      setConfirmDelete(false)
+      setRecepies(recepies.filter((item) => item.id !== idToDelete))
+    }catch(error){
+      console.error(error)
+    }
   }
 
   const handleStar = (id) => {
